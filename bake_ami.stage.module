@@ -1,7 +1,28 @@
 {
   "name": "Bake AMI",
-    "refId": "1",
-    "requisiteStageRefIds": [],
-    "type": "wait",
-    "waitTime": 42
+  "refId": "1",
+  "requisiteStageRefIds": [],
+  "baseAmi": "${ #stage('Lookup AMI ID for Base AMI')['context']['amiDetails'][0]['imageId'] }",
+  "baseLabel": "release",
+  "baseOs": "ubuntu",
+  "cloudProviderType": "aws",
+  "extendedAttributes": {
+    "app_name": "${ parameters.app_name }",
+    "aws_ami_users": "",
+    "environment": "${ parameters.environment }",
+    "iam_instance_profile": "shared-services-packer-profile",
+    "s3_artifact_bucket": "oxletech-artifacts",
+    "s3_configs_bucket": "oxletech-configs",
+    "sha": "${ parameters.sha }"
+  },
+  "package": "${ parameters.app_name }-${ parameters.sha }-${ parameters.environment }",
+  "rebake": false,
+  "regions": [
+    "us-east-1"
+  ],
+  "storeType": "ebs",
+  "templateFileName": "aws-oxletech.json",
+  "type": "bake",
+  "user": "[anonymous]",
+  "vmType": "hvm"
 }
