@@ -1,0 +1,17 @@
+{
+      "cloudProvider": "aws",
+      "cloudProviderType": "aws",
+      "name": "Lookup AMI ID for Base AMI",
+      "overrideTimeout": true,
+      "packageName": "ld-${ parameters.app_name }-base-ami",
+      "refId": "3",
+      "regions": [
+        "us-east-1"
+      ],
+      "requisiteStageRefIds": [
+        "7"
+      ],
+      "stageTimeoutMs": 60000,
+      "tags": {},
+      "type": "findImageFromTags"
+}
