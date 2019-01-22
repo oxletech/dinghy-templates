@@ -5,7 +5,7 @@
   "clusters": [
     {
       "account": "development",
-      "application": "{{ var "ldAppName" ?: "ldAppName-in-dinghy-file-is-unset" }}",
+      "application": {{ var "ldAppName" ?: "ldAppName-in-dinghy-file-is-unset" }},
       "associatePublicIpAddress": false,
       "availabilityZones": {
         "us-east-1": [
@@ -29,9 +29,9 @@
       "freeFormDetails": "",
       "healthCheckGracePeriod": 600,
       "healthCheckType": "EC2",
-      "iamRole": "{{ var "ldAppNameIamRole" }}",
+      "iamRole": {{ var "ldAppNameIamRole" }},
       "instanceMonitoring": false,
-      "instanceType": {{ var "ldAppNameInstanceType" }}",
+      "instanceType": {{ var "ldAppNameInstanceType" }},
       "keyPair": "ops_bootstrap",
       "loadBalancers": [],
       "moniker": {
@@ -51,7 +51,7 @@
       "subnetType": "private-subnets",
       "suspendedProcesses": [],
       "tags": {
-        "Name": "{{ var "ldAppNameEc2NameTag" }}",
+        "Name": {{ var "ldAppNameEc2NameTag" }},
         "Environment: "Development"
       },
       "targetGroups": [],
