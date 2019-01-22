@@ -5,7 +5,7 @@
   "clusters": [
     {
       "account": "development",
-      "application": {{ var "ldAppName" ?: "ldAppName-in-dinghy-file-is-unset" }},
+      "application": "{{ var "ldAppName" ?: "ldAppName-in-dinghy-file-is-unset" }}",
       "associatePublicIpAddress": false,
       "availabilityZones": {
         "us-east-1": [
