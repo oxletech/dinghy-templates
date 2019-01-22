@@ -13,6 +13,6 @@
   "statusUrlResolution": "getMethod",
   "successStatuses": "",
   "type": "webhook",
-  "url": {{ var "shaLookupUrl" ? : "" }},
+  "url": "{{ var "shaLookupUrl" ? : "https://shaLookupUrl-in-dinghy-file-is-unset.local/" }}",
   "waitForCompletion": false
 }
