@@ -52,7 +52,7 @@
       "suspendedProcesses": [],
       "tags": {
         "Name": "{{ var "ldAppNameEc2NameTag" }}",
-        "Environment: "Development"
+        "Environment": "Development"
       },
       "targetGroups": [],
       "targetHealthyDeployPercentage": 100,
