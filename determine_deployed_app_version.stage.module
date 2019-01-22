@@ -13,6 +13,6 @@
   "statusUrlResolution": "getMethod",
   "successStatuses": "",
   "type": "webhook",
-  "url": "https://internal.stage/private/status",
+  "url": {{ var "shaLookupUrl" ? : "" }},
   "waitForCompletion": false
 }
