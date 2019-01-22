@@ -1,6 +1,6 @@
 {
       "name": "Lookup AMI ID for Base AMI",
-      "refId": "4",
+      "refId": "2",
       "requisiteStageRefIds": {{ var "requisiteStageRefIds" ?: [] }},
       "cloudProvider": "aws",
       "cloudProviderType": "aws",
