@@ -1,7 +1,7 @@
 {
   "name": "Bake AMI",
   "refId": "2",
-  "requisiteStageRefIds": [],
+  "requisiteStageRefIds": ["3"],
   "baseAmi": "${ #stage('Lookup AMI ID for Base AMI')['context']['amiDetails'][0]['imageId'] }",
   "baseLabel": "release",
   "baseOs": "ubuntu",
