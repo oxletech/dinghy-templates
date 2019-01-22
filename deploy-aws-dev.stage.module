@@ -5,7 +5,7 @@
   "clusters": [
     {
       "account": "development",
-      "application": "oxletech",
+      "application": "{{ var "ldAppName" ?: "ldAppName-in-dinghy-file-is-unset" }}",
       "associatePublicIpAddress": false,
       "availabilityZones": {
         "us-east-1": [
@@ -29,9 +29,9 @@
       "freeFormDetails": "",
       "healthCheckGracePeriod": 600,
       "healthCheckType": "EC2",
-      "iamRole": "development-gonfalon",
+      "iamRole": "{{ var "ldAppNameIamRole" }}",
       "instanceMonitoring": false,
-      "instanceType": "t2.small",
+      "instanceType": {{ var "ldAppNameInstanceType" }}",
       "keyPair": "ops_bootstrap",
       "loadBalancers": [],
       "moniker": {
@@ -51,7 +51,8 @@
       "subnetType": "private-subnets",
       "suspendedProcesses": [],
       "tags": {
-        "Name": "oxletech (test)"
+        "Name": "{{ var "ldAppNameEc2NameTag" }}",
+        "Environment: "Development"
       },
       "targetGroups": [],
       "targetHealthyDeployPercentage": 100,
