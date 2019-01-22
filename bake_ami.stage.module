@@ -1,4 +1,7 @@
 {
+  "name": "Bake AMI",
+  "refId": "1",
+  "requisiteStageRefIds": [],
   "baseAmi": "${ #stage('Lookup AMI ID for Base AMI')['context']['amiDetails'][0]['imageId'] }",
   "baseLabel": "release",
   "baseOs": "ubuntu",
@@ -12,15 +15,10 @@
     "s3_configs_bucket": "oxletech-configs",
     "sha": "${ parameters.sha }"
   },
-  "name": "Bake AMI",
   "package": "${ parameters.app_name }-${ parameters.sha }-${ parameters.environment }",
   "rebake": false,
-  "refId": "1",
   "regions": [
     "us-east-1"
-  ],
-  "requisiteStageRefIds": [
-    "3"
   ],
   "storeType": "ebs",
   "templateFileName": "aws-oxletech.json",
