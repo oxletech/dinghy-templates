@@ -1,0 +1,8 @@
+{
+  "clusters": [],
+  "isNew": true,
+  "name": "deploy to stage",
+  "refId": "104",
+  "requisiteStageRefIds": {{ var "requisiteStageRefIds" ?: [] }},
+  "type": "deploy"
+}
