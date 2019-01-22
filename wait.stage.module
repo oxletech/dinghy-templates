@@ -1,7 +1,7 @@
 {
     "name": "Wait",
     "refId": "1",
-    "requisiteStageRefIds": [],
+    "requisiteStageRefIds": {{ var "requisiteStageRefIds" ?: [] }},
     "type": "wait",
     "waitTime": 42
 }
