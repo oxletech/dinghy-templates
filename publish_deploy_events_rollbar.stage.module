@@ -1,0 +1,20 @@
+{
+  "name": "Publish deploy events to Rollbar",
+  "refId": "7",
+  "requisiteStageRefIds": {{ var "requisiteStageRefIds" ?: [] }},
+  "completeOtherBranchesThenFail": false,
+  "continuePipeline": true,
+  "failPipeline": false,
+  "method": "POST",
+  "payload": {
+    "access_token": "ourtoken",
+    "environment": "${ parameters.environment }",
+    "local_username": "${ trigger.user }",
+    "revision": "${ parameters.sha }",
+    "status": "succeeded"
+  },
+  "statusUrlResolution": "getMethod",
+  "type": "webhook",
+  "url": "https://webhook.site/990aaba8-3a30-4d0b-be12-06df6fb2a5d1",
+  "waitForCompletion": false
+}

@@ -1,16 +1,16 @@
 {
-      "name": "Lookup AMI ID for Base AMI",
-      "refId": "2",
-      "requisiteStageRefIds": {{ var "requisiteStageRefIds" ?: [] }},
-      "cloudProvider": "aws",
-      "cloudProviderType": "aws",
-      "name": "Lookup AMI ID for Base AMI",
-      "overrideTimeout": true,
-      "packageName": "ld-${ parameters.app_name }-base-ami",
-      "regions": [
-        "us-east-1"
-      ],
-      "stageTimeoutMs": 60000,
-      "tags": {},
-      "type": "findImageFromTags"
+  "name": "Lookup AMI ID for Base AMI",
+  "refId": "3",
+  "requisiteStageRefIds": {{ var "requisiteStageRefIds" ?: [] }},
+  "cloudProvider": "aws",
+  "cloudProviderType": "aws",
+  "name": "Lookup AMI ID for Base AMI",
+  "overrideTimeout": true,
+  "packageName": "ld-${ parameters.app_name }-base-ami",
+  "regions": [
+    "us-east-1"
+  ],
+  "stageTimeoutMs": 60000,
+  "tags": {},
+  "type": "findImageFromTags"
 }

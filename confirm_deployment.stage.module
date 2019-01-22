@@ -1,0 +1,28 @@
+{
+  "name": "Confirm that deploy should continue",
+  "refId": "2",
+  "requisiteStageRefIds": {{ var "requisiteStageRefIds" ?: [] }},
+  "failPipeline": true,
+  "instructions": "Deploying ${ trigger['parameters']['app_name'] }-${ trigger['parameters']['sha'] } to ${ trigger['parameters']['environment'] }. The diff is: <a href=\"https://github.com/oxletech/${ trigger['parameters']['app_name'] }/compare/${ #stage( 'Determine version of application currently deployed' )['context']['buildInfo']['version'] }...${ trigger['parameters']['sha'] }\"/>",
+  "judgmentInputs": [],
+  "notifications": [
+    {
+      "address": "oxletech-bot-test",
+      "level": "stage",
+      "type": "slack",
+      "when": [
+        "manualJudgment",
+        "manualJudgmentContinue",
+        "manualJudgmentStop"
+      ]
+    }
+  ],
+  "overrideTimeout": true,
+  "sendNotifications": true,
+  "stageEnabled": {
+    "expression": "${ parameters.environment } != development",
+    "type": "expression"
+  },
+  "stageTimeoutMs": 3600000,
+  "type": "manualJudgment"
+}

@@ -1,0 +1,20 @@
+{
+  "name": "Publish deploy events to Graphite",
+  "refId": "6",
+  "requisiteStageRefIds": {{ var "requisiteStageRefIds" ?: [] }},
+  "completeOtherBranchesThenFail": false,
+  "continuePipeline": true,
+  "failPipeline": false,
+  "method": "POST",
+  "payload": {
+    "tags": [
+      "deploy.${ parameters.app_name }",
+      "${ trigger['parameters']['sha'] }"
+    ],
+    "what": "deploy.${ parameters.app_name }"
+  },
+  "statusUrlResolution": "getMethod",
+  "type": "webhook",
+  "url": "https://webhook.site/990aaba8-3a30-4d0b-be12-06df6fb2a5d1",
+  "waitForCompletion": false
+}

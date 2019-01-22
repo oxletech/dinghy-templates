@@ -1,6 +1,6 @@
 {
   "name": "Bake AMI",
-  "refId": "3",
+  "refId": "4",
   "requisiteStageRefIds": {{ var "requisiteStageRefIds" ?: [] }},
   "baseAmi": "${ #stage('Lookup AMI ID for Base AMI')['context']['amiDetails'][0]['imageId'] }",
   "baseLabel": "release",
